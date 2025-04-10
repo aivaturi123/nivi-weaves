@@ -19,7 +19,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path = "/auth" element = {<Login/>}/>
+            <Route path = "/login" element = {<Login/>}/>
+            <Route path = "/register" element = {<Register/>}/>
           </Routes>
           <ToastContainer />
         </Router>
