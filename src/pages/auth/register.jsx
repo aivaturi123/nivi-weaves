@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, {useState} from "react";
-import { auth, db} from "./firebase"
+import { auth, db } from "../../firebase/firebase";
+
 import {setDoc, doc} from "firebase/firestore"
 import {toast} from "react-toastify";
 
@@ -19,7 +20,7 @@ function Register() {
             if(user){
                 await setDoc(doc(db, "Users", user.uid),{
                     email: user.email,
-                    firstMame: fname,
+                    firstName: fname,
                     lastName: lname,
                 });
                      
@@ -45,7 +46,7 @@ function Register() {
                 <input
                     type = "text"
                     className = "form-control"
-                    placeHolder = "First name"
+                    placeholder = "First name"
                     onChange = {(e) => setFname(e.target.value)}
                     required
                 /> 
@@ -55,7 +56,7 @@ function Register() {
                 <input
                     type = "text"
                     className = "form-control"
-                    placeHolder = "Lasr name"
+                    placeholder = "Last name"
                     onChange={(e) => setLname(e.target.value)}
                 /> 
             </div>
@@ -64,7 +65,7 @@ function Register() {
                 <input
                     type = "text"
                     className = "form-control"
-                    placeHolder = "Email"
+                    placeholder = "Email"
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 /> 
@@ -74,7 +75,7 @@ function Register() {
                 <input
                     type = "text"
                     className = "form-control"
-                    placeHolder = "pw"
+                    placeholder = "pw"
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 /> 

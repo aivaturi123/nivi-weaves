@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {React, useState} from "react";
-import {auth} from "./firebase"
+import { auth } from "../../firebase/firebase";
+import { toast } from 'react-toastify';
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -32,7 +33,7 @@ function Login() {
                 <input
                     type = "text"
                     className = "form-control"
-                    placeHolder = "enter email"
+                    placeholder = "enter email"
                     value = {email}
                     onChange = {(e) => setEmail(e.target.value)}
                     
@@ -46,7 +47,7 @@ function Login() {
                 <input 
                     type = "text"
                     className = "form-control"
-                    placeHolder ="enter pw"
+                    placeholder ="enter pw"
                     value = {password}
                     onChange = {(e) => setPassword(e.target.value)}
                     

@@ -5,6 +5,10 @@ import { Navbar } from './components/navbar';
 import { Cart } from './pages/cart/cart.jsx';
 import { Shop } from './pages/shop/shop.jsx';
 import { ShopContextProvider } from './context/shop-context'; 
+import Login from "./pages/auth/login.jsx";       
+import Register from "./pages/auth/register.jsx"; 
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   return (
@@ -17,8 +21,10 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path = "/auth" element = {<Login/>}/>
           </Routes>
+          <ToastContainer />
         </Router>
       </ShopContextProvider>
+
     </div>
   );
 }
