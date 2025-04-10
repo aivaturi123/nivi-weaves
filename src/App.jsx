@@ -1,3 +1,4 @@
+// daddyo
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/navbar';
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path = "/auth" element = {<Login/>}/>
           </Routes>
         </Router>
       </ShopContextProvider>
