@@ -10,8 +10,8 @@ function Login() {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password)
-            console.log("registration good")
-                        toast.success("registration good bruh", {
+            console.log("login good")
+                        toast.success("login good bruh", {
                             position: "top-center",
                         });
         }
@@ -25,7 +25,7 @@ function Login() {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h3> Login</h3>
 
             <div className = "mb-3">
