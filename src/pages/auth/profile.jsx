@@ -1,20 +1,20 @@
 import React from 'react';
-import { useAuth } from '../../context/authcontext';  // Custom hook to access auth data
-import { signOut } from 'firebase/auth';  // Firebase signOut function
-import { useNavigate } from 'react-router-dom';  // React Router for navigation
-import { auth } from '../../firebase/firebase';  // Firebase auth instance
-import { toast } from 'react-toastify';  // For displaying notifications
+import { useAuth } from '../../context/authcontext';  
+import { signOut } from 'firebase/auth';  
+import { useNavigate } from 'react-router-dom';  
+import { auth } from '../../firebase/firebase';  
+import { toast } from 'react-toastify';  
+import { NavbarTop } from '../../components/navbartop';
 
 export const Profile = () => {
-  const { currentUser } = useAuth();  // Get currentUser from AuthContext
-  const navigate = useNavigate();  // To redirect after logout
+  const { currentUser } = useAuth();  
+  const navigate = useNavigate(); 
 
-  // Log the currentUser to verify it is being passed correctly
+
   console.log("Current user:", currentUser);
 
-  // Show loading message if currentUser is not available
   if (!currentUser) {
-    return <p>Loading user data...</p>;  // You can display a spinner or a different message
+    return <p>Loading user data...</p>;  
   }
 
   // Handle Logout with confirmation
@@ -44,19 +44,24 @@ export const Profile = () => {
   };
 
   return (
+    <>
+    <div className='temp'>
+      <NavbarTop/>
+    </div>
     <div>
       <h1>Welcome, {currentUser.firstName} {currentUser.lastName}</h1>
       <p>Email: {currentUser.email}</p>
-      {/* Add more fields like profile picture, bio, etc. if needed */}
+      
 
-      {/* Logout button */}
+      
       <div>
         <button onClick={handleLogout} className="btn btn-danger">
           Logout
         </button>
       </div>
-      <button onClick = {() => {navigate("/shop")}}> back to shopping</button>
+      {/* <button onClick = {() => {navigate("/shop")}}> back to shopping</button> */}
     </div>
+    </>
   );
 };
 
