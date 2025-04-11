@@ -2,7 +2,9 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import {React, useState} from "react";
 import { auth } from "../../firebase/firebase";
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 function Login() {
+     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -22,9 +24,11 @@ function Login() {
                         })
 
         }
+        navigate("/shop");
     }
 
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <h3> Login</h3>
 
@@ -60,7 +64,10 @@ function Login() {
             <p className = "forgot-password text-right">
                 New User? <a href = "/register">Register here</a>
             </p>
+            
         </form>
+        <button onClick={() => {navigate("/")}}> go to home</button>
+        </>
 
     );
 }

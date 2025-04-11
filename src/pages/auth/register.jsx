@@ -48,8 +48,9 @@ function Register() {
   };
 
   return (
+    <>
     <form onSubmit={handleRegister}>
-      <h3>Sign Up</h3>
+      <h3>Register</h3>
 
       <div className="mb-3">
         <label>First name</label>
@@ -103,7 +104,11 @@ function Register() {
       <p className="forgot-password text-right">
         Already registered? <a href="/login">Login</a>
       </p>
+      
     </form>
+    <button onClick={() => {navigate("/")}}> go to home</button>
+    </>
+    
   );
 }
 

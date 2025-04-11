@@ -3,10 +3,17 @@ import './shop.css';
 import { PRODS } from "../../prods";
 import { Product} from "./product";
 import {Sidebar} from '../../components/sidebar.jsx';
+import { NavbarTop } from '../../components/navbartop.jsx';
+import '../../components/navbartop.css';
 
 export const Shop = () => {
   return (
+    <>
+    <div className='temp'>
+    <NavbarTop/>
+    </div>
     <div className='shop'>
+      
         <div className='header'>
             
             <h1> <b> Nivi Weaves.</b></h1>
@@ -21,5 +28,7 @@ export const Shop = () => {
         </div>
 
     </div>
-  )
+    </>
+    
+  );
 };

@@ -11,7 +11,7 @@ export const NavbarTop = () => {
             <Link to="/shop"> Shop </Link>
             <Link to="/cart"> <ShoppingCart className = "cart" size = {27}/></Link>
             <Link to = "/profile"> <User className = "user" size = {27}/> </Link>
-            <Link to = "/register"> <Pencil className = "pencil" size = {27}/> </Link>
+            
 
             
         </div>

@@ -1,23 +1,31 @@
-import videobg from "../assets/bgvid.mp4"
 import { Navigate, useNavigate } from "react-router-dom"
 import './home.css'
+import Register from "./auth/register";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from "./auth/login.jsx"
+import bg from "../assets/justbg.png"
+
+
 export const Home = () => {
 
     const nav = useNavigate();
-    const regit = () => {
-        nav("/register");
+
+    const reg = () =>{
+        nav("/register")
     }
-    const logit = () => {
-        nav("/login");
+    const log = () =>{
+        nav("/login")
     }
+    
     return (
-        <>
+        <div className="home">
+            
             <div className = "reg">
-                <button onClick = {regit}> Register </button>
-                <button onClick = {logit}> Login </button>
+                <button onClick = {reg}> Register </button>
+                <button onClick = {log}> Login </button>
             </div>
-            <video src = {videobg} muted loop autoPlay/>
-        </>
+            
+        </div>
         
         
     )

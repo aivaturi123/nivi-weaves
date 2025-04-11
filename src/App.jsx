@@ -20,16 +20,27 @@ function App() {
   return (
     <div className="App">
       <ShopContextProvider>
-       
+      <ToastContainer />
         <Router>
- 
-          <ToastContainer />
+          <Routes>      
+          <Route path = "/" element = {<Home/>}/>
+          <Route
+              path="/register"
+              element={ <Register />}/>
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="/shop"
+              element={<Shop/>}
+            />
+            <Route
+              path="/cart"
+              element={<Cart/>}
+            />
           
-          {!userLoggedIn && <Home/>}
-          {userLoggedIn && <NavbarTop />}
-
-          <Routes>
-            
+{/*             
             <Route
               path="/shop"
               element={userLoggedIn ? <Shop /> : <Navigate to="/login" />}
@@ -37,22 +48,16 @@ function App() {
             <Route
               path="/cart"
               element={userLoggedIn ? <Cart /> : <Navigate to="/login" />}
-            />
+            /> */}
             <Route
               path="/profile"
               element={<Profile/>}
             />
          
-            <Route
-              path="/login"
-              element={userLoggedIn ? <Shop/> : <Login />}
-            />
-            <Route
-              path="/register"
-              element={ <Register />}
-            />
             
             
+            
+          
           </Routes>
         </Router>
       </ShopContextProvider>
