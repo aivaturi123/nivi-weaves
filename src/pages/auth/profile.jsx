@@ -32,7 +32,7 @@ export const Profile = () => {
             position: "top-center",
           });
           // Redirect to login page after logout
-          navigate('/login');
+          navigate('/');
         } catch (error) {
           console.log("Error logging out:", error.message);
           toast.error("Error logging out", {
@@ -55,6 +55,7 @@ export const Profile = () => {
           Logout
         </button>
       </div>
+      <button onClick = {() => {navigate("/shop")}}> back to shopping</button>
     </div>
   );
 };

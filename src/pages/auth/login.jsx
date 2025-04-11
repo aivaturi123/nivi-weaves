@@ -49,7 +49,7 @@ function Login() {
             <div className = "mb-3">
                 <label> Password </label>
                 <input 
-                    type = "text"
+                    type = "password"
                     className = "form-control"
                     placeholder ="enter pw"
                     value = {password}

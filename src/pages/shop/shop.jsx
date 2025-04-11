@@ -4,7 +4,7 @@ import { PRODS } from "../../prods";
 import { Product} from "./product";
 import {Sidebar} from '../../components/sidebar.jsx';
 import { NavbarTop } from '../../components/navbartop.jsx';
-import '../../components/navbartop.css';
+
 
 export const Shop = () => {
   return (

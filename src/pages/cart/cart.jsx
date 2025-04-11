@@ -6,12 +6,18 @@ import { CartItem } from './cartItem'
 import {Product} from "../shop/product"
 import "./cart.css"
 import { useNavigate } from 'react-router-dom'
+import { NavbarTop } from '../../components/navbartop'
 
 export const Cart = () => {
   const { cartItems, getTotalCartAmount} = useContext(ShopContext);
   const totalamount = getTotalCartAmount();
   const navigate = useNavigate();
   return (
+    <>
+    <div className='temp'>
+        <NavbarTop/>
+    </div>
+    
     <div className='cart'>
       <div>
         <h1> Your Cart Items... </h1>
@@ -36,5 +42,6 @@ export const Cart = () => {
         <h1> Buy something! </h1>
       
     )}</div>
+    </>
   );
 }
