@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './components/navbar';
+import { NavbarTop } from './components/navbartop.jsx';
 import { Cart } from './pages/cart/cart.jsx';
 import { Shop } from './pages/shop/shop.jsx';
 import { Profile } from './pages/auth/profile.jsx'
@@ -25,7 +25,7 @@ function App() {
           <ToastContainer />
           
           
-          {userLoggedIn && <Navbar />}
+          {userLoggedIn && <NavbarTop />}
 
           <Routes>
             

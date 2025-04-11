@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart } from 'phosphor-react';
 import { User, Pencil} from 'phosphor-react';
 
-import './navbar.css';
-export const Navbar = () => {
+import './navbartop.css';
+export const NavbarTop = () => {
   return (
-    <div className='navbar'>
+    <div className='navbartop'>
         <div className='links'>
             <Link to="/shop"> Shop </Link>
             <Link to="/cart"> <ShoppingCart className = "cart" size = {27}/></Link>
             <Link to = "/profile"> <User className = "user" size = {27}/> </Link>
             <Link to = "/register"> <Pencil className = "pencil" size = {27}/> </Link>
-            
+
             
         </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './shop.css';
 import { PRODS } from "../../prods";
 import { Product} from "./product";
-import Navbar from './components/Navbar';
+import {Sidebar} from '../../components/sidebar.jsx';
 
 export const Shop = () => {
   return (
