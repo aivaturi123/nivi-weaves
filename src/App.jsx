@@ -10,6 +10,7 @@ import Register from "./pages/auth/register.jsx";
 import { ToastContainer } from 'react-toastify';
 import { useAuth } from './context/authcontext';
 import { Navigate } from 'react-router-dom';
+import { Home } from './pages/home.jsx'
 
 function App() {
   const { userLoggedIn, loading } = useAuth();
@@ -24,7 +25,7 @@ function App() {
  
           <ToastContainer />
           
-          
+          {!userLoggedIn && <Home/>}
           {userLoggedIn && <NavbarTop />}
 
           <Routes>
@@ -50,6 +51,7 @@ function App() {
               path="/register"
               element={ <Register />}
             />
+            
             
           </Routes>
         </Router>
