@@ -2,6 +2,7 @@ import React from 'react'
 import './shop.css';
 import { PRODS } from "../../prods";
 import { Product} from "./product";
+import Navbar from './components/Navbar';
 
 export const Shop = () => {
   return (
