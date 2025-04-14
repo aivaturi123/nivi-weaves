@@ -19,7 +19,9 @@ export const Home = () => {
     
     return (
         <div className="home">
-            
+            {/* <NavbarCat/>
+                <NavbarTop/>
+                <Sidebar/> */}
             <div className = "reg">
                 <button onClick = {reg}> Register </button>
                 <button onClick = {log}> Login </button>
