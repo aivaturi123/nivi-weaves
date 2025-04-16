@@ -1,10 +1,13 @@
 import React from 'react';
-import { PRODS } from '../../prods'
+import { temp } from '/sidebar.jsx'
 
-export const catalogue = (props) => {
 
-  let temp = PRODS;
+export const catalogue = () => {
+
+  
   return (
-    <div>catalogue</div>
+    <div className='prods'> {PRODS.map((product) => 
+      <Product key={product.id} data = {product}/>)}  
+    </div>
   )
 }

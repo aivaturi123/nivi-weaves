@@ -10,6 +10,12 @@ export const Home = () => {
 
     const nav = useNavigate();
 
+    const [filters, setFilters] = useState({
+        all: true,
+        make: [],
+        color: []
+      });
+
     const reg = () =>{
         nav("/register")
     }
@@ -25,6 +31,8 @@ export const Home = () => {
             <div className = "reg">
                 <button onClick = {reg}> Register </button>
                 <button onClick = {log}> Login </button>
+                <Catalogue filters = {filters}/>
+                <Sidebar filters = {filters} setFilters = {setFilters}/>
             </div>
             
         </div>

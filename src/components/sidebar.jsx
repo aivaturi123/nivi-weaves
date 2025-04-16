@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import { PRODS } from '../../prods';
 import { preview } from 'vite';
-export const Sidebar = () => {
+export const Sidebar = ({filters, setFilters}) => {
 
-    let temp = PRODS;
+    let temp = [];
     
     const [filters, setFilters] = useState({
         all: true,
@@ -13,7 +13,18 @@ export const Sidebar = () => {
     })
 
     const getFilteredProds = () => {
-
+        
+        for(let i = 0; i < PRODS.length; i++) {
+            var exists = false;
+            for(let j = 0; j < filters.length; j++) {
+                if(PRODS[i].make.equals(filters[j])) {
+                    exists = true;
+                }
+            }
+            if(exists) {
+                temp.push(PRODS[i]);
+            }
+        }
 
     }
 
